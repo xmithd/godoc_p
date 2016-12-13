@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import AppBar from 'material-ui/AppBar';
 import {connect} from 'react-redux';
+import * as Pages from './Pages';
 
 const styles = {
   appBar: {
@@ -21,6 +22,22 @@ const LandingPage = (props) => {
   const tabChanged = (value) => {
     props.tabChanged(value);
   }
+  let tabPage;
+  switch(props.currentTab) { 
+    case 1:
+      tabPage = <Pages.WhoWeAre />
+      break;
+    case 2:
+      tabPage = <Pages.WhatWeDo />
+      break;
+    case 3:
+      tabPage = <Pages.LoginRegister />
+      break;
+    case 0:
+    default:
+      tabPage = <Pages.Home />
+      break;
+  }
   return (
   <div>
   <AppBar title="GoDoc" style={styles.appBar}>
@@ -32,7 +49,7 @@ const LandingPage = (props) => {
       }
     </Tabs>
   </AppBar>
-  {props.children}
+  {tabPage}
   </div>
   );
 };

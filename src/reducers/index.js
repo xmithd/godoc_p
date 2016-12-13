@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import {hashHistory} from 'react-router';
 
 const login = (state = { username: null}, action) => {
   // TODO
@@ -10,23 +9,16 @@ const tabs = (state, action) => {
   if (!state) {
     state = {
       menu: [
-        {link: '/home', title: 'Home'},
-        {link: '/who-we-are', title: 'who we are'},
-        {link: '/what-we-do', title: 'what we do'},
-        {link: '/register-log-in', title: 'register/log in'}
-      ]
+        {key: '/home', title: 'Home'},
+        {key: '/who-we-are', title: 'who we are'},
+        {key: '/what-we-do', title: 'what we do'},
+        {key: '/register-log-in', title: 'register/log in'}
+      ],
+      currentTab: 0
     };
-    //console.log(hashHistory.location);
-    if(hashHistory.location) {
-      state.currentTab = (val) => (state.menu.findIndex( (element) => element.link === val ) )(hashHistory.location);
-    } else {
-      state.currentTab = 0;
-    }
+
   }
   if (action && action.type === 'TAB_CHANGED') {
-    const to = state.menu[action.value].link;
-    if (hashHistory.location !== to)
-      hashHistory.push(state.menu[action.value].link);
     state = {...state, currentTab: action.value};
   }
   return state;

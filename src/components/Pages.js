@@ -1,5 +1,7 @@
 import React from 'react';
-
+import RaisedButton from 'material-ui/RaisedButton';
+import { notAvailable } from '../actions/index';
+import { connect } from 'react-redux';
 
 export const Home = () => (
   <div>
@@ -21,9 +23,29 @@ export const WhoWeAre = () => (
   </div>
 );
 
+const mapStateToProps = (state) => ({});
+
+const mapDispatchToProps = (dispatch) => ({
+  performLogin : () => { dispatch({type: 'LOG_IN'}) },
+  performRegister: () => { notAvailable(dispatch) }
+});
+
 // TODO 
-export const LoginRegister = (props) => (
-  <div>
-    <p>TODO login/register forms</p>
-  </div>
+export const LoginRegister = connect(mapStateToProps, mapDispatchToProps)((props) => {
+  const style = {
+    margin: 12
+  };
+  return (
+    <div>
+      <RaisedButton label="Login" primary={true} style={style} onClick={props.performLogin}>
+      </RaisedButton>
+      <br />
+      <RaisedButton label="Register" secondary={true} style={style} onClick={props.performRegister}>
+      </RaisedButton>
+    </div>
+    )
+  }
 );
+
+
+

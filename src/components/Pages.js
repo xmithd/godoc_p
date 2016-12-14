@@ -27,7 +27,7 @@ const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   performLogin : () => { dispatch({type: 'LOG_IN'}) },
-  performRegister: () => { notAvailable(dispatch) }
+  performRegister: () => { dispatch(notAvailable()) }
 });
 
 // TODO 
@@ -36,7 +36,7 @@ export const LoginRegister = connect(mapStateToProps, mapDispatchToProps)((props
     margin: 12
   };
   return (
-    <div>
+    <div style={{textAlign: 'center'}}>
       <RaisedButton label="Login" primary={true} style={style} onClick={props.performLogin}>
       </RaisedButton>
       <br />

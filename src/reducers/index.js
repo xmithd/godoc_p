@@ -1,7 +1,14 @@
 import { combineReducers } from 'redux';
+import { hashHistory } from 'react-router';
 
-const login = (state = { username: null}, action) => {
-  // TODO
+const login = (state = { username: null }, action) => {
+  if (action.type === 'LOG_IN') {
+    state = { username: 'test_user' }
+    hashHistory.push('/App');
+  } else if (action.type === 'LOG_OUT') {
+    state = { username: null }
+    hashHistory.push('/');
+  }
   return state;
 };
 
@@ -24,7 +31,21 @@ const tabs = (state, action) => {
   return state;
 }
 
+const doctorSearch = (state = { symptoms: '', results: []  }, action) => {
+  switch (action.type) {
+    case 'SEARCH_INPUT_CHANGED':
+      return {...state, symptoms: action.value};
+    case 'SEARCH_SUBMIT_SUCCESS':
+      console.log('Search results:', action.results);
+      hashHistory.push('/App/book/results');
+      return {...state, results: action.results};
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   login,
-  tabs
+  tabs,
+  doctorSearch
 });

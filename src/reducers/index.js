@@ -31,14 +31,17 @@ const tabs = (state, action) => {
   return state;
 }
 
-const doctorSearch = (state = { symptoms: '', results: []  }, action) => {
+const doctorSearch = (state = { symptoms: '', results: [], selectedIndex: -1  }, action) => {
   switch (action.type) {
     case 'SEARCH_INPUT_CHANGED':
       return {...state, symptoms: action.value};
     case 'SEARCH_SUBMIT_SUCCESS':
       console.log('Search results:', action.results);
-      hashHistory.push('/App/book/results');
+      hashHistory.push('/App/results');
       return {...state, results: action.results};
+    case 'CARD_SELECTED':
+      hashHistory.push('/App/details');
+      return {...state, selectedIndex : state.results.findIndex( (it) => action.id === it.id ) }
     default:
       return state;
   }
@@ -47,5 +50,5 @@ const doctorSearch = (state = { symptoms: '', results: []  }, action) => {
 export default combineReducers({
   login,
   tabs,
-  doctorSearch
+  doctorSearch,
 });

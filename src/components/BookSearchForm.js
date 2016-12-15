@@ -18,6 +18,8 @@ const BookSearchForm = (props) => {
     }
   };
   return (
+  <div>
+    <h2>Book an appointment</h2>
   <div style={{textAlign: 'center'}}>
     <TextField
     floatingLabelText="Describe Symptoms"
@@ -44,6 +46,7 @@ const BookSearchForm = (props) => {
     </RadioButtonGroup>
     </div>
     <RaisedButton label="go" primary={true} onClick={props.search(props.symptoms)} />
+  </div>
   </div>
 )};
 

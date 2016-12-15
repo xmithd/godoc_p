@@ -7,10 +7,10 @@ export const notAvailable = () => {
 
 export const performSearch = (searchTerm) => async (dispatch) => {
   try {
-    console.log('Searching doctors for symptoms', searchTerm);
+    console.log('Searching doctors for symptoms:', searchTerm);
     const resp = await api.searchNearbyDoctors();
     dispatch({type: 'SEARCH_SUBMIT_SUCCESS', results: resp.data});
   } catch (e) {
-    console.log('Error fetching doctor data!');
+    console.log('Error in either fetching doctor data or dispatching result!');
   }
 };

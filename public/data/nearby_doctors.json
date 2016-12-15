@@ -1,18 +1,44 @@
 [
   {
+    "id": 0,
     "name": "Dr. Wong",
+    "profession": "Doctor",
     "specialties" : [
       "Chinese medicine",
       "General Practice"
     ],
-    "location": "Central"
+    "location": "Central",
+    "description": "Lorem ipsum...TODO LONG TEXT"
   },
   {
+    "id": 1,
     "name": "Dr. Lee",
+    "profession": "Doctor",
     "specialties": [
       "Acupuncture",
       "Physical Therapy"
     ],
-    "location": "Tsim Sha Tsui"
+    "location": "Tsim Sha Tsui",
+    "description": "Lorem ipsum...TODO LONG TEXT"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Zhao",
+    "profession": "Doctor",
+    "specialties": [
+      "General Practice",
+      "Children health"
+    ],
+    "location": "Causeway bay",
+    "description": "Lorem ipsum...TODO LONG TEXT"
+  },
+  {
+    "id": 3,
+    "name": "Brian Johnson",
+    "profession": "Nurse",
+    "specialties": [
+    ],
+    "location": "HKU",
+    "description": "Lorem ipsum...TODO LONG TEXT"
   }
 ]

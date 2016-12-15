@@ -12,6 +12,7 @@ const login = (state = { username: null }, action) => {
   return state;
 };
 
+// tabs for landing page
 const tabs = (state, action) => {
   if (!state) {
     state = {

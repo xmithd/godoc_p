@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "name": "Dr. Wong",
+    "name": "Dr. Jonathan Wong",
     "profession": "Doctor",
     "specialties" : [
       "Chinese medicine",
@@ -9,11 +9,14 @@
     ],
     "rating": 1,
     "location": "Central",
-    "description": "Lorem ipsum...TODO LONG TEXT"
+    "description": "Dr. Wong has many years of experience treating and diagnosing illnesses.",
+    "education": "Johns Hopkins School of Medicine",
+    "fav_movie": "Ghostbusters",
+    "fav_hobby": "Tennis"
   },
   {
     "id": 1,
-    "name": "Dr. Lee",
+    "name": "Dr. Isabel Lee",
     "profession": "Doctor",
     "specialties": [
       "Acupuncture",
@@ -21,30 +24,38 @@
     ],
     "rating": 2,
     "location": "Tsim Sha Tsui",
-    "description": "Lorem ipsum...TODO LONG TEXT"
+    "description": "Dr. Lee has been quoted in various medical journals for her research in treating Osteoporosis. She has three years of experience in Hong Kong.",
+    "education": "Johns Hopkins School of Medicine",
+    "fav_movie": "Rush Hour",
+    "fav_hobby": "Working out"
   },
   {
     "id": 2,
-    "name": "Dr. Zhao",
+    "name": "Dr. Kevin Zhao",
     "profession": "Doctor",
     "specialties": [
-      "General Practice",
-      "Children health"
+      "Cardiology"
     ],
     "rating": 3,
     "location": "Causeway bay",
-    "description": "Lorem ipsum...TODO LONG TEXT"
+    "description": "Dr. Zhao has performed heart surgeries for over 500 people in his 25 years as a Doctor.",
+    "education": "UNC School of Medicine",
+    "fav_movie": "Pulp Fiction",
+    "fav_hobby": "Listening to Metal"
   },
   {
     "id": 3,
-    "name": "Brian Johnson",
+    "name": "Mr. Brian Johnson",
     "profession": "Nurse",
     "specialties": [
       "Diet",
       "Influenza care"
     ],
-    "rating": 0,
+    "rating": 2,
     "location": "HKU",
-    "description": "Lorem ipsum...TODO LONG TEXT"
+    "description": "Mr. Johnson is a relied upon and important senior member of the HKU medical staff.",
+    "education": "Hong Kong University",
+    "fav_movie": "Star Wars",
+    "fav_hobby": "Collecting paintings"
   }
 ]

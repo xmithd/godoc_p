@@ -1,5 +1,4 @@
 import React from 'react';
-import SocialPerson from 'material-ui/svg-icons/social/person';
 import ActionAccountBox from 'material-ui/svg-icons/action/account-box';
 
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';

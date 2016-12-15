@@ -7,6 +7,8 @@
       "Chinese medicine",
       "General Practice"
     ],
+    "rating": 1,
+    "price": "1000 HKD",
     "location": "Central",
     "description": "Lorem ipsum...TODO LONG TEXT"
   },
@@ -18,6 +20,8 @@
       "Acupuncture",
       "Physical Therapy"
     ],
+    "rating": 2,
+    "price": "1000 HKD",
     "location": "Tsim Sha Tsui",
     "description": "Lorem ipsum...TODO LONG TEXT"
   },
@@ -29,6 +33,8 @@
       "General Practice",
       "Children health"
     ],
+    "rating": 3,
+    "price": "1000 HKD",
     "location": "Causeway bay",
     "description": "Lorem ipsum...TODO LONG TEXT"
   },
@@ -37,7 +43,11 @@
     "name": "Brian Johnson",
     "profession": "Nurse",
     "specialties": [
+      "Diet",
+      "Influenza care"
     ],
+    "rating": 0,
+    "price": "600 HKD",
     "location": "HKU",
     "description": "Lorem ipsum...TODO LONG TEXT"
   }

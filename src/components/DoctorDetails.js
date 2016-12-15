@@ -28,7 +28,7 @@ const isDateDisabled = (date) => {
   return false;
 };
 
-const DoctorDetails = ({id, name, profession, specialties, location, description, rate, rating, fav_movie, fav_hobby, education, goToBookAppointment}) => {
+const DoctorDetails = ({id, name, profession, specialties, location, description, rate, rating, languages, fav_movie, fav_hobby, education, goToBookAppointment}) => {
   const styles = {
     block: { margin: '20px' },
     slider: { maxWidth : '30%' },
@@ -56,6 +56,10 @@ const DoctorDetails = ({id, name, profession, specialties, location, description
           <p>
           { education }
           </p>
+          <h4>Languages Spoken</h4>
+          <ul>
+            { languages.map( (lang, idx) => <li key={idx}>{lang}</li> ) }
+          </ul>
           <h4>Ratings</h4> 
           <RatingSlider style={styles.slider} currentValue={rating} />
           <h4>Favourite Movie</h4>

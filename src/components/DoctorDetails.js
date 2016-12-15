@@ -6,8 +6,29 @@ import SocialPerson from 'material-ui/svg-icons/social/person';
 import {Card, CardHeader, CardText, CardMedia } from 'material-ui/Card';
 import DatePicker from 'material-ui/DatePicker';
 import TimePicker from 'material-ui/TimePicker';
+import RaisedButton from 'material-ui/RaisedButton';
 
-const DoctorDetails = ({id, name, profession, specialties, location, description, rate, rating}) => {
+const isDateDisabled = (date) => {
+  const weekday = date.getDay();
+  const day = date.getDate();
+  const month = date.getMonth();
+  // Saturday / Sunday
+  if (weekday === 0 || weekday === 6)
+    return true;
+  const current = new Date();
+  // past
+  if (date < current) {
+    return true;
+  }
+  // some holidays at the end of the year
+  if ( (month === 11 && (day === 31 || day === 24 || day === 25))
+      || (month === 0 && (day === 1)) ) {
+    return true;
+  }
+  return false;
+};
+
+const DoctorDetails = ({id, name, profession, specialties, location, description, rate, rating, goToBookAppointment}) => {
   const styles = {
     block: { margin: '20px' },
     slider: { maxWidth : '30%' },
@@ -39,7 +60,10 @@ const DoctorDetails = ({id, name, profession, specialties, location, description
           </p>
           <h4>Ratings</h4> 
           <RatingSlider style={styles.slider} currentValue={rating} />
-          <h4>Availabilities</h4>
+          <h4>Choose date and time</h4>
+          <DatePicker shouldDisableDate={isDateDisabled} hintText="Select Date"/>
+          <TimePicker hintText="Pick a time" />
+          <RaisedButton onTouchTap={goToBookAppointment} label="Book Appointment" />
         </CardText>
       </Card>
       <h3>Reviews</h3>
@@ -52,5 +76,8 @@ const mapStateToProps = (state) => ({
 ...state.doctorSearch.results[state.doctorSearch.selectedIndex]
 });
 
+const mapDispatchToProps = (dispatch) => ({
+goToBookAppointment: () => { dispatch({type: 'SHOW_DIALOG', text: 'You will receive an email confirmation shortly', title: 'Book Appointment'}); }
+});
 
-export default connect(mapStateToProps, null)(DoctorDetails)
+export default connect(mapStateToProps, mapDispatchToProps)(DoctorDetails);

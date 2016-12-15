@@ -12,11 +12,11 @@ const MainMenu = ({goToStorage, goToAppointments, goToProfile}) => {
     <RaisedButton primary={true} style={style} label="Check and Book"
     containerElement={<Link to="/App/book"/>}/>
     <br />
-    <RaisedButton primary={true} style={style} label="Storage" onClick={goToStorage}/>
+    <RaisedButton primary={true} style={style} label="Storage" onTouchTap={goToStorage}/>
     <br />
-    <RaisedButton primary={true} style={style} label="My Appointments" onClick={goToAppointments}/>
+    <RaisedButton primary={true} style={style} label="My Appointments" onTouchTap={goToAppointments}/>
     <br />
-    <RaisedButton primary={true} style={style} label="My Profile" onClick={goToProfile} />
+    <RaisedButton primary={true} style={style} label="My Profile" onTouchTap={goToProfile} />
   </div>
   )
 };

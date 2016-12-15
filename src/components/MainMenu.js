@@ -18,7 +18,7 @@ const MainMenu = ({goToStorage, goToAppointments, goToProfile, goToAppleTip}) =>
     <br />
     <RaisedButton primary={true} style={style} label="My Profile" onTouchTap={goToProfile} />
     <br />
-    <RaisedButton style={style} label="Apple tip of the day" backgroundColor="#ff4081" onTouchTap={goToAppleTip}/>
+    <RaisedButton style={style} labelColor="white" label="Apple tip of the day" backgroundColor="#ff4081" onTouchTap={goToAppleTip}/>
   </div>
   )
 };

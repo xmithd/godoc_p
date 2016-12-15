@@ -28,14 +28,13 @@ const isDateDisabled = (date) => {
   return false;
 };
 
-const DoctorDetails = ({id, name, profession, specialties, location, description, rate, rating, goToBookAppointment}) => {
+const DoctorDetails = ({id, name, profession, specialties, location, description, rate, rating, fav_movie, fav_hobby, education, goToBookAppointment}) => {
   const styles = {
     block: { margin: '20px' },
     slider: { maxWidth : '30%' },
     card: {},
     avatar: { width: '100px', height: '100px' },
     description: { textAlign: 'justify' },
-    priceTag: { color: 'red' }
   }
   return (
     <div style={styles.block}>
@@ -49,20 +48,27 @@ const DoctorDetails = ({id, name, profession, specialties, location, description
           <SocialPerson style={styles.avatar}/> 
         </CardMedia>
         <CardText>
-          Specialties: <br />
+          <h4>Specialties</h4>
           <ul>
             {specialties.map( (it, idx) => (<li key={idx}>{it}</li>) ) } 
           </ul>
-          <p style={styles.description}>
-          { description }
-          </p>
-          <p style={styles.priceTag}>
+          <h4>Education</h4>
+          <p>
+          { education }
           </p>
           <h4>Ratings</h4> 
           <RatingSlider style={styles.slider} currentValue={rating} />
+          <h4>Favourite Movie</h4>
+          <p>
+          {fav_movie}
+          </p>
+          <h4>Favourite Hobby</h4>
+          <p>
+          {fav_hobby}
+          </p>
           <h4>Choose date and time</h4>
-          <DatePicker shouldDisableDate={isDateDisabled} hintText="Select Date"/>
-          <TimePicker hintText="Pick a time" />
+          <DatePicker shouldDisableDate={isDateDisabled} hintText="Select a Date"/>
+          <TimePicker hintText="Pick a Time" />
           <RaisedButton onTouchTap={goToBookAppointment} label="Book Appointment" />
         </CardText>
       </Card>

@@ -6,6 +6,8 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import {connect} from 'react-redux';
 import MenuItemsMapper from '../actions/MenuItemsMapper';
 
+import { Link } from 'react-router';
+
 const IconElements = (props) => {
   return (
     <IconMenu
@@ -15,7 +17,7 @@ const IconElements = (props) => {
       targetOrigin={{horizontal: 'right', vertical: 'top'}}
       anchorOrigin={{horizontal: 'right', vertical: 'top'}}
     >
-      <MenuItem primaryText="Check and Book" />
+      <MenuItem primaryText="Check and Book" containerElement={<Link to="/App/book" />} />
       <MenuItem primaryText="Storage" onTouchTap={props.goToStorage} />
       <MenuItem primaryText="My Appointments" onTouchTap={props.goToAppointments}/>
       <MenuItem primaryText="My Profile" onTouchTap={props.goToProfile} />

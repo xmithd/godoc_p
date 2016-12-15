@@ -35,7 +35,7 @@ const MenuItemsMapper = (dispatch) => {
       title: 'An apple a day keeps the doctor away',
       text: (<div>
           Follow these tips to stay well this Winter.<br /><br />
-          Tonight will be a cold night. Remember to wear a jacket and stay warm to avoid catching germs.
+          Tonight will be a cold night. Remember to wear a jacket and stay warm!
         </div>)
     })
   }

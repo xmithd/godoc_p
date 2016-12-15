@@ -2,7 +2,7 @@ import React from 'react';
 import ActionAccountBox from 'material-ui/svg-icons/action/account-box';
 
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import {connect} from 'react-redux';
 
@@ -31,7 +31,7 @@ const ProfileCard = ({id, name, specialties, location, profession, description, 
           </p>
         </CardText>
         <CardActions>
-          <FlatButton label="Select" onClick={selectCard(id)} />
+          <RaisedButton label="Select" onClick={selectCard(id)} />
         </CardActions>
       </Card>
   );

@@ -40,7 +40,9 @@ const LandingPage = (props) => {
   }
   return (
   <div>
-  <AppBar title="GoDoc" style={styles.appBar}>
+  <AppBar title="GoDoc" style={styles.appBar}
+  iconElementLeft={<img src="/data/godoc.png" height="50" width="50"/>}
+  >
     <Tabs style={styles.tabs} onChange={tabChanged} value={props.currentTab}>
       {
         props.items.map( (item, idx) =>

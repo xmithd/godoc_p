@@ -2,22 +2,24 @@ import React from 'react';
 import FontIcon from 'material-ui/FontIcon';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router';
+import {connect} from 'react-redux';
+import MenuItemsMapper from '../actions/MenuItemsMapper';
 
-const MainMenu = () => {
+const MainMenu = ({goToStorage, goToAppointments, goToProfile}) => {
   const style = { margin: 12 };
   return (
   <div style={{textAlign: 'center'}}>
-    <RaisedButton primary={true} style={style} label="my profile" 
-    icon={<FontIcon className="muidocs-icon-custom-github"/>}/>
-    <br />
-    <RaisedButton primary={true} style={style} label="book"
+    <RaisedButton primary={true} style={style} label="Check and Book"
     containerElement={<Link to="/App/book"/>}/>
     <br />
-    <RaisedButton primary={true} style={style} label="my appointments"/>
+    <RaisedButton primary={true} style={style} label="Storage" onClick={goToStorage}/>
     <br />
-    <RaisedButton primary={true} style={style} label="my reminders" />
+    <RaisedButton primary={true} style={style} label="My Appointments" onClick={goToAppointments}/>
+    <br />
+    <RaisedButton primary={true} style={style} label="My Profile" onClick={goToProfile} />
   </div>
   )
 };
 
-export default MainMenu;
+// MenuItemsMapper is mapDispatchToProps..
+export default connect(null, MenuItemsMapper)(MainMenu);

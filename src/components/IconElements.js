@@ -14,10 +14,10 @@ const IconElements = (props) => {
       targetOrigin={{horizontal: 'right', vertical: 'top'}}
       anchorOrigin={{horizontal: 'right', vertical: 'top'}}
     >
-      <MenuItem primaryText="Profile" />
-      <MenuItem primaryText="Book" />
+      <MenuItem primaryText="Check and Book" />
+      <MenuItem primaryText="Storage" />
       <MenuItem primaryText="My Appointments" />
-      <MenuItem primaryText="My Reminders" />
+      <MenuItem primaryText="My Profile" />
       <MenuItem primaryText="Logout" onClick={props.logout}/>
     </IconMenu>
   );

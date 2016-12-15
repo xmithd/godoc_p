@@ -4,8 +4,10 @@ import RatingSlider from './RatingSlider';
 import SocialPerson from 'material-ui/svg-icons/social/person';
 
 import {Card, CardHeader, CardText, CardMedia } from 'material-ui/Card';
+import DatePicker from 'material-ui/DatePicker';
+import TimePicker from 'material-ui/TimePicker';
 
-const DoctorDetails = ({id, name, profession, specialties, location, description, rate, price, rating}) => {
+const DoctorDetails = ({id, name, profession, specialties, location, description, rate, rating}) => {
   const styles = {
     block: { margin: '20px' },
     slider: { maxWidth : '30%' },
@@ -34,10 +36,10 @@ const DoctorDetails = ({id, name, profession, specialties, location, description
           { description }
           </p>
           <p style={styles.priceTag}>
-            {price}
           </p>
           <h4>Ratings</h4> 
           <RatingSlider style={styles.slider} currentValue={rating} />
+          <h4>Availabilities</h4>
         </CardText>
       </Card>
       <h3>Reviews</h3>

@@ -13,7 +13,7 @@ class App extends Component {
         style={{flexWrap: 'wrap'}}
         title="GoDoc"
         iconElementRight={<IconElements />}
-        iconElementLeft={<img src="/data/godoc.png" height="50" width="50"/>}
+        iconElementLeft={<img alt="" src={`${process.env.PUBLIC_URL}/data/godoc.png`} height="50" width="50"/>}
         />
         <GenericDialog />
         {this.props.children}

@@ -11,7 +11,7 @@ const GenericDialog = ({text, title, handleClose, isOpen}) => {
     <Dialog
       title={title}
       modal={true}
-      open= {isOpen}
+      open={isOpen}
       actions={actions}
       onRequestClose={handleClose}
     >
